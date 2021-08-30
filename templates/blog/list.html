@@ -1,0 +1,15 @@
+{% extends 'base/base-template.html' %}
+{% block content %}
+
+<h5>Blog Func</h5>
+<h4>List of Blog</h4>
+
+<a href="{{BASE_URL}}create"><h3>Create A Post</h3></a>
+
+{% for post in posts %}
+<ul>
+    <a href="{{BASE_URL}}post/{{post.id}}">{{post.title}}</a>
+</ul>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base/base-template.html' %}
+{% block content %}
+
+{% for post in posts %}
+
+<ul>
+    <h2>{{post.author}}</h2>
+    <h4>{{post.title}}</h4>
+    <p>{{post.text}}</p>
+</ul>
+
+<a href="/edit/{{ post.id }}">Update</a>
+<a href="/delete/{{ post.id }}">Delete</a>
+<a href="/comment/{{ post.id }}">Comment</a>
+
+{% endfor %}
+
+
+{% endblock %}

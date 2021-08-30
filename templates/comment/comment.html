@@ -1,0 +1,15 @@
+{% extends 'base/base-template.html' %}
+{% block content %}
+
+<h4>Create Comment</h4>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <button type="submit">Submit</button>
+
+</form>
+
+
+{% endblock %}

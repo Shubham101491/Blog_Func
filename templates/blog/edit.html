@@ -1,0 +1,21 @@
+{% extends 'base/base-template.html' %}
+{% block content %}
+
+<h5>Edit Page</h5>
+
+{% for post in posts %}
+
+<form action="/update/{{post.id}}" method="POST">
+    {% csrf_token %}
+    <h4>Update Post</h4>
+    <ul>
+        <h2>{{post.author}}</h2>
+        <h4>{{post.title}}</h4>
+        <p>{{post.text}}</p>
+    </ul>
+    <button type="submit">Update</button>
+</form>
+
+{% endfor %}
+
+{% endblock %}
